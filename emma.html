@@ -7,101 +7,88 @@
       
       function timer(){
         setInterval(myTime, 1000);
-        setInterval(ranHour, 36000);
-        setInterval(ranMin, 6000);
-        setInterval(ranSec, 1000); 
+        setInterval(randHour,20000);
+        randHour();
         myTime();
-        ranHour();
-        ranMin();
-        ranSec();
+        
       };
     
-      function myTime(){
+      function myTime(x){
         
         var t = new Date();
         var myHour = ("0"+t.getHours()).substr(-2);
         var myMinute = ("0"+t.getMinutes()).substr(-2);
         var mySecond = ("0"+t.getSeconds()).substr(-2);
-        
-        
-        document.getElementById("hour").innerHTML = t.getHours();
-        document.getElementById("minute").innerHTML = myMinute;
-        document.getElementById("second").innerHTML = mySecond;
         document.getElementById("time").innerHTML = myHour+" : "+myMinute
         +" : "+mySecond;  
 
       };
       
-      function ranHour(){
-        var newHour
+      function randHour() {
         var t = new Date();
-        var myHour = ("0"+t.getHours()).substr(-2);
-        var myMinute = ("0"+t.getMinutes()).substr(-2);
-        var mySecond = ("0"+t.getSeconds()).substr(-2);
-        var myOp = Math.floor(Math.random()*12)+1;
-        var randOp = Math.floor(Math.random()*12)+1
+        var myHour = t.getHours();
+        var iniOpp = Math.floor(Math.random()*2)+1
+        var finOpp = Math.floor(Math.random()*2)+1
+        var ranOpp = Math.floor(Math.random()*myHour)
+        var ranOppB = Math.floor(Math.random()*24)+1
+        var newHour;
+        var hourArr = [];
+        var x = 0;
         
-        if (myOp<=3){
-          newHour = myHour-randOp
-          document.getElementById("ranHr").innerHTML = newHour+" + "+randOp;
-        } else if (myOp<=6){
-          newHour = myHour+randOp
-          document.getElementById("ranHr").innerHTML = newHour+" - "+randOp;        
-        } else if (myOp<=9){
-          newHour = myHour/randOp
-          document.getElementById("ranHr").innerHTML = newHour+" * "+randOp;        
+        if (iniOpp<=1){
+          newHour = myHour - ranOpp;
         } else {
-          newHour = myHour*randOp
-          document.getElementById("ranHr").innerHTML = newHour+" / "+randOp;        
+          newHour = myHour + ranOpp;
         }
-       
-      };
-      
-      function ranMin(){
-        var newMin
-        var t = new Date();
-        var myMinute = ("0"+t.getMinutes()).substr(-2);
-        var myOp = Math.floor(Math.random()*12)+1;
-        var randOp = Math.floor(Math.random()*60)+1
         
-        if (myOp<=3){
-          newMinute = myMinute-randOp
-          document.getElementById("ranMin").innerHTML = newMinute+" + "+randOp;
-        } else if (myOp<=6){
-          newMinute = myMinute+randOp
-          document.getElementById("ranMin").innerHTML = newMinute+" - "+randOp;        
-        } else if (myOp<=12 && randOp<31){
-          newMinute = (myMinute/randOp).toFixed(3)
-          document.getElementById("ranMin").innerHTML = newMinute+" * "+randOp;        
-        } else {
-          newMinute = myMinute*randOp;
-          document.getElementById("ranMin").innerHTML = newMinute+" / "+randOp;        
+        if (finOpp<=1){
+          if (newHour>0){
+            for(i = 1; i <= newHour; i++) {
+              if(newHour % i == 0) {
+                hourArr[x]=i;
+                x += 1;
+              }
+            }
+          } else {
+            for(i = -1; i >= newHour; i--) {
+              if(newHour % i == 0) {
+                hourArr[x]=i;
+                x += 1;
+              }
+            }        
+          };
         }
-       
-      };
-      
-      function ranSec(){
-        var newSec
-        var t = new Date();
-        var mySecond = t.getSeconds()
-        var myOp = Math.floor(Math.random()*12)+1;
-        var randOp = Math.floor(Math.random()*60)+1
         
-        if (myOp<=3){
-          newSec = mySecond-randOp
-          document.getElementById("ranSec").innerHTML = newSec+" + "+randOp;
-        } else if (myOp<=6){
-          newSec = mySecond+randOp
-          document.getElementById("ranSec").innerHTML = newSec+" - "+randOp;        
-        } else if (myOp<=12 && randOp<31){
-          newSec = (mySecond/randOp).toFixed(3)
-          document.getElementById("ranSec").innerHTML = newSec+" * "+randOp;        
+        
+        
+        var arrRan=Math.floor(Math.random()*hourArr.length)
+               
+        text = hourArr[arrRan]
+        
+        var hourMulti = newHour/text
+        var hourDiv = newHour * ranOppB
+        
+        document.getElementById("hour").innerHTML = text;
+        document.getElementById("minute").innerHTML = newHour;
+        
+        if (finOpp<=1){
+          if (iniOpp<=1){
+            document.getElementById("second").innerHTML = text+"x"+hourMulti+"+"+ranOpp
+          } else {
+            document.getElementById("second").innerHTML = text+"x"+hourMulti+"-"+ranOpp
+          }
         } else {
-          newSec = mySecond*randOp;
-          document.getElementById("ranSec").innerHTML = newSec+" / "+randOp;        
+          if (iniOpp<=1){
+             document.getElementById("second").innerHTML = hourDiv+"/"+ranOppB+"+"+ranOpp
+          } else {
+             document.getElementById("second").innerHTML = hourDiv+"/"+ranOppB+"-"+ranOpp
+          }
+         
         }
-       
+        
       };
+
+
       
     </script>
     
@@ -115,9 +102,7 @@
     <p id="minute">Minute</p>
     <p id="second">Second</p>
     <p id="time"></p>
-    <p id="ranHr"></p>
-    <p id="ranMin"></p>
-    <p id="ranSec"></p>
+
     
   </body>
 </html>
