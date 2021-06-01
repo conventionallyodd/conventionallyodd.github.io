@@ -8,9 +8,9 @@
     
       function myTime(){
         var t = new Date();
-        myHour = "0"+t.getHours();
-        myMinute = "0"+t.getMinutes();
-        mySecond = t.getSeconds();
+        var myHour = ("0"+t.getHours()).substr(-2);
+        var myMinute = ("0"+t.getMinutes()).substr(-2);
+        var mySecond = ("0"+t.getSeconds()).substr(-2);
         document.getElementById("hour").innerHTML = myHour;
         document.getElementById("minute").innerHTML = myMinute;
         document.getElementById("second").innerHTML = mySecond;
@@ -18,7 +18,7 @@
       };
     </script>
     
-    The Time Now v.4
+    The Time Now v.5
     
     <p id="hour">Hour</p>
     <p id="minute">Minute</p>
