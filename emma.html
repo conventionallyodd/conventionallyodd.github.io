@@ -8,9 +8,9 @@
     
       function myTime(){
         var t = new Date();
-        var myHour = ("0"+t.getHours()).substr(-2);
-        var myMinute = ("0"+t.getMinutes()).substr(-2);
-        var mySecond = ("0"+t.getSeconds()).substr(-2);
+        var myHour = t.getHours();
+        var myMinute = t.getMinutes();
+        var mySecond = t.getSeconds();
         document.getElementById("hour").innerHTML = myHour;
         document.getElementById("minute").innerHTML = myMinute;
         document.getElementById("second").innerHTML = mySecond;
