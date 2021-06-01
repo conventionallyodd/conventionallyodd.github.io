@@ -8,7 +8,7 @@
     
       function myTime(){
         var t = new Date();
-        myHour = ("0"+t.getHours()).substr(-2);
+        myHour = "0"+t.getHours();
         myMinute = "0"+t.getMinutes();
         mySecond = t.getSeconds();
         document.getElementById("hour").innerHTML = myHour;
@@ -18,7 +18,7 @@
       };
     </script>
     
-    The Time Now v.3
+    The Time Now v.4
     
     <p id="hour">Hour</p>
     <p id="minute">Minute</p>
