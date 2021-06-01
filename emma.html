@@ -1,13 +1,13 @@
 <html>
   <body onload="timer()">
     <script>
-      var t = new Date();
       
       function timer(){
         setInterval(myTime, 1000);       
       };
     
       function myTime(){
+        var t = new Date();
         document.getElementById("hour").innerHTML = t.getHours();
         document.getElementById("minute").innerHTML = t.getMinutes();
         document.getElementById("second").innerHTML = t.getSeconds();
