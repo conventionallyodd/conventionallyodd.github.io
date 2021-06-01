@@ -8,10 +8,13 @@
     
       function myTime(){
         var t = new Date();
-        document.getElementById("hour").innerHTML = t.getHours();
-        document.getElementById("minute").innerHTML = t.getMinutes();
-        document.getElementById("second").innerHTML = t.getSeconds();
-        document.getElementById("time").innerHTML = t.getHours()+" : "+t.getMinutes()+" : "+t.getSeconds();
+        myHour = (0+t.getHours()).substr(-2);
+        myMinute = (0+t.getMinutes()).substr(-2);
+        mySecond = (0+t.getSeconds()).substr(-2);
+        document.getElementById("hour").innerHTML = myHour;
+        document.getElementById("minute").innerHTML = myMinute;
+        document.getElementById("second").innerHTML = mySecond;
+        document.getElementById("time").innerHTML = myHour" : "+myMinute+" : "+mySecond;
       };
     </script>
     
