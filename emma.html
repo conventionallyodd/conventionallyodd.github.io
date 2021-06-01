@@ -7,14 +7,32 @@
       };
     
       function myTime(){
+        
         var t = new Date();
-        var myHour = t.getHours();
-        var myMinute = t.getMinutes();
-        var mySecond = t.getSeconds();
+        var myHour = ("0"+t.getHours()).substr(-2);
+        var myMinute = ("0"+t.getMinutes()).substr(-2);
+        var mySecond = ("0"+t.getSeconds()).substr(-2);
+        
+        document.getElementById("ranTime").innerHTML = ""
         document.getElementById("hour").innerHTML = t.getHours();
         document.getElementById("minute").innerHTML = myMinute;
         document.getElementById("second").innerHTML = mySecond;
-        document.getElementById("time").innerHTML = myHour" : "+myMinute+" : "+mySecond;
+        document.getElementById("time").innerHTML = myHour+" : "+myMinute
+        +" : "+mySecond;  
+        ranTime(myHour);
+        document.getElementById("ranTime").innerHTML += newTime+" : "
+        ranTime(myMinute);
+        document.getElementById("ranTime").innerHTML += newTime+" : "
+        ranTime(mySecond);
+        
+        document.getElementById("ranTime").innerHTML += newTime
+      };
+      
+      function ranTime(x){
+        
+        newTime = Math.floor(x/2);
+        return newTime;
+       
       };
     </script>
     
@@ -24,6 +42,7 @@
     <p id="minute">Minute</p>
     <p id="second">Second</p>
     <p id="time"></p>
+    <p id="ranTime"></p>
     
   </body>
 </html>
