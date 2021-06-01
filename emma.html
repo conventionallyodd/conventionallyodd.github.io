@@ -3,6 +3,14 @@
     <title>Everglow Clocks</title>
   </head>
   <body onload="timer()">
+    <style>
+      p {
+        font-family: verdana;
+        font-size: 30px;
+        text-align: center;
+      }
+    </style>
+    
     <script>
     
       var timeInt = setInterval(myTime, 1000);
@@ -93,7 +101,7 @@
         if (finOpp<=1){
           if (iniOpp<=1){
             document.getElementById("hour").innerHTML = text+"x"+hourMulti+"+"+ranOpp+"   h"
-          } else {
+          } else { 
             document.getElementById("hour").innerHTML = text+"x"+hourMulti+"-"+ranOpp+"   h"
           }
         } else {
