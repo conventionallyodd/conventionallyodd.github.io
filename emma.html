@@ -102,7 +102,7 @@
           newHour = myHour + ranOpp;
         }
         
-        if (finOpp<=1){
+        if (finOpp<=1&& newHour!=0){
           if (newHour>0){
             for(i = 1; i <= newHour; i++) {
               if(newHour % i == 0) {
@@ -131,7 +131,7 @@
         
 
         
-        if (finOpp<=1){
+        if (finOpp<=1&& newHour!=0){
           if (iniOpp<=1){
             document.getElementById("hour").innerHTML = text+"x"+hourMulti+"+"+ranOpp
           } else { 
@@ -165,7 +165,7 @@
           newMin = myMin + ranOpp;
         }
         
-        if (finOpp<=1){
+        if (finOpp<=1 && newMin!=0){
           if (newMin>0){
             for(i = 1; i <= newMin; i++) {
               if(newMin % i == 0) {
@@ -194,7 +194,7 @@
         
 
         
-        if (finOpp<=1){
+        if (finOpp<=1 && newMin!=0){
           if (iniOpp<=1){
             document.getElementById("minute").innerHTML = text+"x"+minMulti+"+"+ranOpp
           } else {
@@ -228,7 +228,7 @@
     </script>
     
     
-    The Time Now v.8
+    The Time Now v.7
     
     <div class="box">
       <button class="btn" onclick="restart()">Refresh</button>
