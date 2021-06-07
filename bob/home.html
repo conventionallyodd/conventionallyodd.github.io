@@ -16,6 +16,12 @@
     align-items: center;
     justify-content: center;
   }
+  .mainContainer {
+    position: relative;
+    padding-top: 140;
+    text-align: center;
+    /*display: flex;*/
+  }
   
   .backup {
     position: absolute;    
@@ -42,10 +48,22 @@
 <div class="nav">
   
   <button class="backup">Back</button>
-  <img class="homeImg" src="images/BookOfBeasties_Logo_.png" alt="Beastie World">
+  <img class="homeImg" src="images/BookOfBeasties_Logo_.png" alt="Beastie Logo">
   <button class="about">About</button>
   
 </div>
+<div class="mainContainer">
+  <img margin-top="25px" width="auto" height="200px" src="images/Website Globe (1).png" alt="It's a Beastie World"><br>
+  <form>
+    <label for="user">Email/Username</label><br>
+    <input id="user" name="user" type="email" size="30"><br>
+    <label for="pWord">Password (8 characters min)</label><br>
+    <input id="pWord" name="pWord" type="password" size="30"><br>
+    
+  </form>
+  <a href="/create">Create New Account?</a><br>
+  
+<div>
 
 </body>
 </html>
