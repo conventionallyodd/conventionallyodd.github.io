@@ -6,10 +6,6 @@
     margin: 0;
     padding:0;
   }
-  a {
-    color: black;
-    text-decoration: none;
-  }
 
   .nav {
     background-color:#ffedf1;
@@ -83,16 +79,16 @@
   <button class="about">About</button>
 <div class="mainContainer">
   <div class="divRow">
-    <a href="add"><div class="dashBtn" style="background-color:red">Add
-    </div></a>
-    <a href="assessment"><div class="dashBtn" style="background-color:blue">Assessment
-    </div></a>
+    <<div class="dashBtn" onclick="window.location.href='add'" style="background-color:red">Add
+    </div>
+    <div class="dashBtn" onclick="window.location.href='assessment'" style="background-color:blue">Assessment
+    </div>
   </div>
   <div class="divRow">
-    <a href="report"><div class="dashBtn" style="background-color:green">Report
-    </div></a>
-    <a href="profile"><div class="dashBtn" style="background-color:yellow">User Profile
-      </div></a>
+    <div class="dashBtn" onclick="window.location.href='report'" style="background-color:green">Report
+    </div>
+    <div class="dashBtn" onclick="window.location.href='profile'" style="background-color:yellow">User Profile
+      </div>
   </div>
 </div>
 <script>
