@@ -53,13 +53,13 @@
   <button class="about" onmousedown="showPW()" onmouseup="hidePW()">About</button>
 <div class="mainContainer">
   <img margin-top="25px" width="auto" height="200px" src="images/Website Globe (1).png" alt="It's a Beastie World"><br>
-  <form>
+  <form onsubmit="reDirect()">
     <label for="user">Email/Username</label><br><br>
     <input id="user" name="user" type="email" size="30"><br><br>
     <label for="pWord">Password (8 characters min)</label><br><br>
     <input id="pWord" name="pWord" type="password" size="20">
     <img width="20px" height="auto" src="doesntexist" onmousedown="showPW()" onmouseup="hidePW()" alt="eye"><br><br>
-    <a href="dash"><input type="submit" value="Login"></a>
+    <input type="submit" value="Login">
     
   </form>
   <a href="create">Create New Account?</a><br>  
@@ -71,6 +71,10 @@
   
   function hidePW(){
     document.getElementById("pWord").type="password";
+  }
+  
+  function reDirect(){
+    window.location.replace("dash");
   }
 </script>
 
