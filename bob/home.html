@@ -17,6 +17,13 @@
     align-items: center;
     justify-content: center;
   }
+  .footer {
+    position: relative;
+    display: flex;
+    background-color:#54004b;
+    height: 30px;
+    padding: 10px;
+  }
   .mainContainer {
     position: relative;
     padding-top: 25px;
@@ -31,9 +38,8 @@
   }
   .about {
     position: absolute;
-    bottom: 20px;
-    z-index: 100;
     right: 20px;
+    bottom: 10px;
   }
   .homeImg {
     margin: 20px;
@@ -50,7 +56,7 @@
   <button class="backup">Back</button>
   <a href="home"><img class="homeImg" src="images/BookOfBeasties_Logo_.png" alt="Beastie Logo"></a>
 </div>
-  <button class="about" onmousedown="showPW()" onmouseup="hidePW()">About</button>
+  
 <div class="mainContainer">
   <img margin-top="25px" width="auto" height="200px" src="images/Website Globe (1).png" alt="It's a Beastie World"><br>
   <form>
@@ -62,18 +68,27 @@
     
     
   </form>
-  <button onclick="reDirect()">Login</button><br>
-  <a href="create">Create New Account?</a><br>  
+  <button onclick="reDirect()">Login</button><br><br><br>
+  <a href="create">Create New Account?</a><br><br><br><br>  
 </div>
+
+<div class="footer">
+  <a href="TCPP" style="color:red">T & C and Privacy Policy</a>
+  <button class="about">About</button>
+</div>
+
+
 <script>
+
+  //shows password by changing input type to text
   function showPW(){
     document.getElementById("pWord").type="text";
   };
-  
+  //returns input type to password after image is no longer active
   function hidePW(){
     document.getElementById("pWord").type="password";
   }
-  
+  //redirects to next page following button press
   function reDirect(){
     window.location.replace("dash");
   }
