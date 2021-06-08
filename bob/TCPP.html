@@ -40,6 +40,24 @@
     height: 100px;
     width: auto;
   }
+  .tabDiv {
+    display: flex;
+    justify-content:space-between;
+    margin-left: 10%;
+    margin-right: 10%;
+    border: solid black 3px;
+    
+  }
+  
+  .tabBtn {
+    width: 50%;
+  }
+  
+  .tCPP {
+    margin-left: 10%;
+    margin-right: 10%;
+    border: solid black 3px;
+  }
 
 </style>
 </head>
@@ -52,12 +70,40 @@
 </div>
   <button class="about">About</button>
 <div class="mainContainer">
-  
+  <div class="tabDiv">
+    <button class="tabBtn" onclick="tabSelect('tC','pP',event)" id="default">Terms & Conditions</button>
+    <button class="tabBtn" onclick="tabSelect('pP','tC',event)">Privacy Policy</button>
+  </div>
+  <div class="tCPP" id="tC" style="display:none">
+    <h1>Terms and Conditions</h1>
+    <p>lorem ipsum bitch</p>
+  </div>
+  <div class="tCPP" id="pP" style="display:none">
+    <h1>Privacy Policy</h1>
+    <p>lorem ipsum bitch</p>
+  </div>
 
 
 </div>
 <script>
-
+  document.getElementById("default").click();
+  
+  function tabSelect(show,hide,evt){
+    //create array of tabs with class name tabBtn
+    tabs = document.getElementsByClassName("tabBtn")
+    
+    //show selected tab, hide other
+    document.getElementById(hide).style.display="none";
+    document.getElementById(show).style.display="block";
+    
+    // return all tab brightness to default
+    for (i=0; i<tabs.length; i++){
+      tabs[i].style.filter = null;
+    };
+    
+    //target tab brightness adjusted
+    evt.currentTarget.style.filter = "brightness(85%)";
+  }
 </script>
 
 </body>
