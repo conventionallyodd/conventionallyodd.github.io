@@ -25,6 +25,7 @@
     position: relative;
     padding-top: 25px;
     text-align: center;
+    min-height: 60vh;
   }
   
   .backup {
