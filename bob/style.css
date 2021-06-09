@@ -27,6 +27,7 @@
     background-color:#54004b;
     height: 30px;
     padding: 10px;
+    box-shadow: 0 100vh, 0 100vh #54004b;
   }  
   .backup {
     position: absolute;    
